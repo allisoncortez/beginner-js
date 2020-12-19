@@ -17,7 +17,7 @@ ctx.lineCap = 'round';
 ctx.lineWidth = MOVE_AMOUNT ;
 
 let hue = 0;
-// ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
+// ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //set hue to rainbow color
 ctx.beginPath(); //start drawing
 ctx.moveTo(x, y); //where is the line starting
 ctx.lineTo(x, y); //where the line goes to, endpoint
@@ -28,7 +28,7 @@ ctx.stroke(); //look this up..
 //write a draw fn()
 function draw({ key }) {
     hue += 12;
-    // ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
+    // ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //set hue to rainbow color
     //start path
     ctx.beginPath();
     ctx.moveTo(x,y);
