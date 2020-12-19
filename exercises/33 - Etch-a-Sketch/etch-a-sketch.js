@@ -19,22 +19,18 @@ ctx.lineWidth = MOVE_AMOUNT ;
 let hue = 0;
 // ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //set hue to rainbow color
 ctx.beginPath(); //start drawing
-ctx.moveTo(x, y); //where is the line starting
-ctx.lineTo(x, y); //where the line goes to, endpoint
-ctx.stroke(); //look this up..
+ctx.moveTo(x, y); //line starts
+ctx.lineTo(x, y); //line endpoint
+ctx.stroke(); 
 
 
-
-//write a draw fn()
 function draw({ key }) {
     hue += 12;
     // ctx.strokeStyle = `hsl(${hue}, 100%, 50%)` //set hue to rainbow color
-    //start path
     ctx.beginPath();
     ctx.moveTo(x,y);
+
     //move x and y values depending on what the user did
-    // x = x - MOVE_AMOUNT 
-    // y = y - MOVE_AMOUNT 
     switch (key) {
         case 'ArrowUp' :
             y = y - MOVE_AMOUNT;
@@ -61,11 +57,9 @@ function handleKey(e) {
     if (e.key.includes('Arrow')) {
         e.preventDefault();
         draw({key: e.key});
-        // console.log(e.key);
-        // console.log('handling key');
     }
 }
-//clear/shake fn()
+
 function clearCanvas() {
     canvas.classList.add('shake');
     ctx.clearRect(0, 0, width, height);
@@ -77,6 +71,5 @@ function clearCanvas() {
     );
 }
 
-//listen for arrow keys
 window.addEventListener('keydown', handleKey);
 shakebtn.addEventListener('click', clearCanvas)
